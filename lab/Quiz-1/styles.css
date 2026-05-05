@@ -1,0 +1,26 @@
+img {
+    width: 750px;
+    height: 500px;
+    border-radius: 5%;
+    align-items: center;
+    justify-content: center;
+}
+h1 {
+    text-align: center;
+}
+button {
+    background-color: orange;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 5%;
+    margin-top: 10px;
+    height: 50px;
+    width: 250px;
+}
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

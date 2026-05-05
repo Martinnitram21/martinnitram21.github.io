@@ -1,0 +1,44 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: wheat;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.card{
+    width: 250px;
+    text-align: center;
+    background: violet;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+.card img{
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.card p{
+    margin-top: 15px;
+    color: black;
+    line-height: 1.4;
+    opacity: 0.8;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+.card:hover p{
+    opacity: 1;
+    max-height: 100px;
+}
+.hide {
+    display: none;
+}
