@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollreveal/4.0.9/scrollreveal.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
@@ -35,7 +37,8 @@
         <a href="https://www.facebook.com/jericho.earl.martin/" class="social-link" title="Facebook" target="_blank">
             <i class="fab fa-facebook-f"></i>
         </a>
-        <a href="https://www.linkedin.com/in/jericho-earl-martin-7262a8362/" class="social-link" title="LinkedIn" target="_blank">
+        <a href="https://www.linkedin.com/in/jericho-earl-martin-7262a8362/" class="social-link" title="LinkedIn"
+            target="_blank">
             <i class="fab fa-linkedin-in"></i>
         </a>
         <a href="https://github.com/Martinnitram21" class="social-link" title="GitHub" target="_blank">
@@ -64,7 +67,8 @@
                         currently developing a <span class="highlight-tech">construction estimation platform</span>
                         for an engineering firm and a
                         <span class="highlight-tech">scholarship management system</span>
-                        commissioned by an LGU, both actively in development.</p>
+                        commissioned by an LGU, both actively in development.
+                    </p>
                     <p>My work spans <span class="highlight-keyword">full-stack web development</span>
                         with <span class="highlight-tech">Laravel 12</span> and
                         <span class="highlight-tech">React</span>, and
@@ -74,7 +78,8 @@
                         I've led an international team of 8 for the COIL program, and I approach
                         every project with the same mindset: build things that
                         <span class="highlight-keyword">actually work</span>,
-                        not just things that submit.</p>
+                        not just things that submit.
+                    </p>
                 </div>
                 <a href="resource/ResumeDA.pdf" class="resume-btn" target="_blank">
                     <i class="fas fa-download"></i> View Resume
@@ -103,7 +108,7 @@
                         <div class="carousel-indicators" id="indicators-azabuild"></div>
                     </div>
                     <div class="project-content">
-                        <span class="project-badge">🏗️ In Progress · Solo Build · Client Project</span>
+                        <span class="project-badge">🏗️ In Progress · Solo Build · Capstone</span>
                         <h3 class="project-title">AzaBuild — Construction Estimation System</h3>
                         <div class="project-stats">
                             <span>1,617 Fajardo coefficients</span>
@@ -113,7 +118,7 @@
                         </div>
                         <p class="project-description">
                             Full-stack <strong>Construction Quantity Takeoff, Cost Estimation, and CPM
-                            Project Management</strong> system built solo for
+                                Project Management</strong> system built solo for
                             <strong>Azacon Builders and Realty OPC</strong>, Davao City.
                             Powered by 1,617 material coefficients from Fajardo (1995) with a full
                             interpolation/extrapolation engine, Laravel 12 REST API, React frontend,
@@ -141,7 +146,7 @@
                         <div class="carousel-indicators" id="indicators-eskolar"></div>
                     </div>
                     <div class="project-content">
-                        <span class="project-badge">🎓 In Progress · LGU Commissioned · Capstone</span>
+                        <span class="project-badge">🎓 In Progress · LGU Commissioned · Municipality of Sulop</span>
                         <h3 class="project-title">eSkolar+: LSAS — LGU Scholarship Administration System</h3>
                         <div class="project-stats">
                             <span>LGU commissioned</span>
@@ -262,12 +267,17 @@
                     <div class="certifications">
                         <h3>Certifications & Achievements</h3>
                         <div class="cert-item cert-highlight">
-                            <div class="cert-name">✅ Civil Service Examination Passer — Career Service Professional</div>
+                            <div class="cert-name">✅ Civil Service Examination Passer — Career Service Professional
+                            </div>
                             <div class="cert-date">2026</div>
                             <p style="margin-top:0.5rem; font-size:0.95rem;">
                                 Passed the Career Service Examination (Professional Level) administered
                                 by the Civil Service Commission of the Philippines.
                             </p>
+                            <button class="cert-view-btn"
+                                onclick="openLightbox('resource/cert-cse.jpg', 'Civil Service Examination — Professional · 2026')">
+                                <i class="fas fa-image"></i> View Certificate
+                            </button>
                         </div>
                         <div class="cert-item cert-highlight">
                             <div class="cert-name">🏆 COIL International Collaboration Certificate</div>
@@ -277,23 +287,38 @@
                                 program "Global Web Design: Bridging Cultures through Digital Interfaces"
                                 — Philippines–Indonesia collaboration. Led a team of 8.
                             </p>
+                            <button class="cert-view-btn"
+                                onclick="openLightbox('resource/cert-coil.jpg', 'COIL International Collaboration · Sept–Oct 2025')">
+                                <i class="fas fa-image"></i> View Certificate
+                            </button>
                         </div>
                         <div class="cert-item">
                             <span class="cert-name">PAGHULAGWAY: A Graphic Design Workshop</span>
                             <span class="cert-date">September 26, 2025</span>
+                            <button class="cert-view-btn"
+                                onclick="openLightbox('resource/cert-paghulagway.jpg', 'PAGHULAGWAY: A Graphic Design Workshop · Sept 26, 2025')">
+                                <i class="fas fa-image"></i> View Certificate
+                            </button>
                         </div>
                         <div class="cert-item">
                             <span class="cert-name">XENEA Campus-Wide Blockchain Experience</span>
                             <span class="cert-date">July 25, 2025</span>
+                            <button class="cert-view-btn"
+                                onclick="openLightbox('resource/cert-xenea.jpg', 'XENEA Campus-Wide Blockchain Experience · July 25, 2025')">
+                                <i class="fas fa-image"></i> View Certificate
+                            </button>
                         </div>
                         <div class="cert-item">
                             <span class="cert-name">BATCHES Workshop Series</span>
                             <span class="cert-date">May 7, 2025</span>
+                            <button class="cert-view-btn"
+                                onclick="openLightbox('resource/cert-batches.jpg', 'BATCHES Workshop Series · May 7, 2025')">
+                                <i class="fas fa-image"></i> View Certificate
+                            </button>
                         </div>
                     </div>
-                </div>
 
-            </div>
+                </div>
         </section>
 
         <!-- Experience -->
@@ -336,8 +361,10 @@
                 </div>
             </div>
             <div class="contact-links">
-                <a href="https://www.facebook.com/jericho.earl.martin/" class="contact-link" target="_blank">Facebook</a>
-                <a href="https://www.linkedin.com/in/jericho-earl-martin-7262a8362/" class="contact-link" target="_blank">LinkedIn</a>
+                <a href="https://www.facebook.com/jericho.earl.martin/" class="contact-link"
+                    target="_blank">Facebook</a>
+                <a href="https://www.linkedin.com/in/jericho-earl-martin-7262a8362/" class="contact-link"
+                    target="_blank">LinkedIn</a>
                 <a href="https://github.com/Martinnitram21" class="contact-link" target="_blank">GitHub</a>
                 <a href="resource/ResumeDA.pdf" class="contact-link" target="_blank">Resume</a>
             </div>
@@ -364,6 +391,16 @@
         </div>
     </footer>
 
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-inner">
+            <img class="lightbox-img" id="lightboxImg" src="" alt="Certificate">
+            <span class="lightbox-caption" id="lightboxCaption"></span>
+        </div>
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+    </div>
+
     <script src="script.js"></script>
 </body>
+
 </html>
