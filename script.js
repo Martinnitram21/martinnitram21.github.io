@@ -24,8 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
   if (el) {
     var words = [
       "Web & Software Developer",
-      "Laravel 12 · React · .NET 10",
+      "Laravel · React · .NET 10 · Alpine.js",
       "Civil Service Exam Passer · 2026",
+      "2× COIL International Alumnus",
       "Building real systems, in 3rd year.",
     ];
     var wi = 0,
@@ -145,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  ["azabuild", "eskolar", "travelweave"].forEach(initCarousel);
+  ["azabuild", "eskolar", "travellink", "travelweave"].forEach(initCarousel);
 
   /* must be on window so HTML onclick="moveCarousel(...)" can reach it */
   window.moveCarousel = step;
