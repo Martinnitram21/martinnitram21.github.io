@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "Laravel · React · .NET 10 · Alpine.js",
       "Civil Service Exam Passer · 2026",
       "2× COIL International Alumnus",
-      "Building real systems, in 3rd year.",
+      "Building real systems, since junior year.",
     ];
     var wi = 0,
       ci = 0,
