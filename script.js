@@ -1,208 +1,407 @@
-document.addEventListener("DOMContentLoaded", function () {
-  /* ── Theme ────────────────────────────────────────────── */
-  var toggle = document.getElementById("themeToggle");
-  var saved = localStorage.getItem("theme");
-  if (saved) {
-    document.body.setAttribute("data-theme", saved);
-    toggle.textContent = saved === "dark" ? "☀️" : "🌙";
-  }
-  toggle.addEventListener("click", function () {
-    var dark = document.body.getAttribute("data-theme") === "dark";
-    document.body.setAttribute("data-theme", dark ? "light" : "dark");
-    toggle.textContent = dark ? "🌙" : "☀️";
-    localStorage.setItem("theme", dark ? "light" : "dark");
-  });
+(function () {
+  "use strict";
 
-  /* ── Back to Top ──────────────────────────────────────── */
-  var topBtn = document.getElementById("backToTop");
-  window.addEventListener("scroll", function () {
-    topBtn.classList.toggle("show", window.scrollY > 300);
-  });
+  var reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
 
-  /* ── Typewriter ───────────────────────────────────────── */
-  var el = document.getElementById("typed-text");
-  if (el) {
-    var words = [
-      "Web & Software Developer",
-      "Laravel · React · .NET 10 · Alpine.js",
-      "Civil Service Exam Passer · 2026",
-      "2× COIL International Alumnus",
-      "Building real systems, since junior year.",
-    ];
-    var wi = 0,
-      ci = 0,
-      deleting = false;
+  document.addEventListener("DOMContentLoaded", function () {
+    /* ── Theme ──────────────────────────────────────────── */
+    var toggle = document.getElementById("themeToggle");
 
-    (function tick() {
-      var word = words[wi];
-      el.textContent = deleting ? word.slice(0, ci - 1) : word.slice(0, ci + 1);
-      ci += deleting ? -1 : 1;
+    function applyTheme(theme) {
+      document.body.setAttribute("data-theme", theme);
+      toggle.firstElementChild.textContent = theme === "dark" ? "☀️" : "🌙";
+      toggle.setAttribute(
+        "aria-label",
+        theme === "dark" ? "Switch to light theme" : "Switch to dark theme",
+      );
+    }
 
-      var wait = deleting ? 45 : 95;
-      if (!deleting && ci === word.length) {
-        wait = 2200;
-        deleting = true;
-      } else if (deleting && ci === 0) {
-        deleting = false;
-        wi = (wi + 1) % words.length;
-        wait = 350;
+    var saved = null;
+    try {
+      saved = localStorage.getItem("theme");
+    } catch (e) {
+      /* storage unavailable — fall back to system preference */
+    }
+
+    var prefersDark =
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    applyTheme(saved || (prefersDark ? "dark" : "light"));
+
+    toggle.addEventListener("click", function () {
+      var next =
+        document.body.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      applyTheme(next);
+      try {
+        localStorage.setItem("theme", next);
+      } catch (e) {
+        /* ignore */
       }
+    });
 
-      setTimeout(tick, wait);
-    })();
-  }
+    /* ── Mobile nav ─────────────────────────────────────── */
+    var navToggle = document.getElementById("navToggle");
+    var navLinks = document.getElementById("navLinks");
 
-  /* ── Active Nav on Scroll ─────────────────────────────── */
-  if ("IntersectionObserver" in window) {
-    var navLinks = document.querySelectorAll('.nav-link[href^="#"]');
-    var navObs = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) {
-            navLinks.forEach(function (a) {
-              a.classList.toggle(
-                "active",
-                a.getAttribute("href") === "#" + e.target.id,
-              );
-            });
-          }
+    if (navToggle && navLinks) {
+      navToggle.addEventListener("click", function () {
+        var open = navLinks.classList.toggle("open");
+        navToggle.setAttribute("aria-expanded", String(open));
+        navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      });
+
+      navLinks.addEventListener("click", function (e) {
+        if (e.target.classList.contains("nav-link")) {
+          navLinks.classList.remove("open");
+          navToggle.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+
+    /* ── Footer year ────────────────────────────────────── */
+    var yearEl = document.getElementById("year");
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    /* ── Back to top ────────────────────────────────────── */
+    var topBtn = document.getElementById("backToTop");
+    var ticking = false;
+
+    window.addEventListener(
+      "scroll",
+      function () {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(function () {
+          topBtn.classList.toggle("show", window.scrollY > 320);
+          ticking = false;
         });
       },
-      { threshold: 0.35, rootMargin: "-80px 0px -80px 0px" },
+      { passive: true },
     );
-    document.querySelectorAll("section[id]").forEach(function (s) {
-      navObs.observe(s);
-    });
-  }
 
-  /* ── Carousels ────────────────────────────────────────── */
-  var states = {};
-  var timers = {};
+    /* ── Typewriter ─────────────────────────────────────── */
+    var typedEl = document.getElementById("typed-text");
+    var words = [
+      "Full-stack developer",
+      "Laravel · React · .NET 10 · Alpine.js",
+      "Civil Service Professional passer",
+      "2× COIL International team lead",
+      "Shipping software people actually use",
+    ];
 
-  function initCarousel(id) {
-    var wrap = document.getElementById("carousel-" + id);
-    if (!wrap) return;
-    var slides = wrap.querySelectorAll(".carousel-slide");
-    if (!slides.length) return;
+    if (typedEl && reduceMotion) {
+      typedEl.textContent = words[0];
+    } else if (typedEl) {
+      var wi = 0;
+      var ci = 0;
+      var deleting = false;
 
-    states[id] = { n: slides.length, i: 0 };
+      (function tick() {
+        var word = words[wi];
+        typedEl.textContent = deleting
+          ? word.slice(0, ci - 1)
+          : word.slice(0, ci + 1);
+        ci += deleting ? -1 : 1;
 
-    var dotsEl = document.getElementById("indicators-" + id);
-    if (dotsEl) {
-      slides.forEach(function (_, idx) {
-        var d = document.createElement("div");
-        d.className = "indicator" + (idx === 0 ? " active" : "");
-        d.addEventListener("click", function () {
-          jump(id, idx);
+        var wait = deleting ? 45 : 95;
+        if (!deleting && ci === word.length) {
+          wait = 2200;
+          deleting = true;
+        } else if (deleting && ci === 0) {
+          deleting = false;
+          wi = (wi + 1) % words.length;
+          wait = 350;
+        }
+        setTimeout(tick, wait);
+      })();
+    }
+
+    /* ── Active nav link on scroll ──────────────────────── */
+    if ("IntersectionObserver" in window) {
+      var links = document.querySelectorAll('.nav-link[href^="#"]');
+      var navObs = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            links.forEach(function (a) {
+              a.classList.toggle(
+                "active",
+                a.getAttribute("href") === "#" + entry.target.id,
+              );
+            });
+          });
+        },
+        { threshold: 0.35, rootMargin: "-80px 0px -80px 0px" },
+      );
+      document.querySelectorAll("section[id]").forEach(function (s) {
+        navObs.observe(s);
+      });
+    }
+
+    /* ── Scroll reveal (replaces the ScrollReveal CDN) ──── */
+    if ("IntersectionObserver" in window && !reduceMotion) {
+      var revealTargets = document.querySelectorAll(
+        ".section:not(.hero), .featured-project",
+      );
+      revealTargets.forEach(function (el) {
+        el.classList.add("reveal");
+      });
+
+      var revealObs = new IntersectionObserver(
+        function (entries, obs) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-visible");
+            obs.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.08, rootMargin: "0px 0px -60px 0px" },
+      );
+
+      revealTargets.forEach(function (el) {
+        revealObs.observe(el);
+      });
+    }
+
+    /* ── Carousels ──────────────────────────────────────── */
+    var carousels = {};
+    var AUTOPLAY_MS = 5000;
+
+    function draw(id) {
+      var c = carousels[id];
+      if (!c) return;
+
+      c.track.style.transform = "translateX(-" + c.index * 100 + "%)";
+
+      c.slides.forEach(function (slide, i) {
+        // Keep off-screen slides out of the tab order and the a11y tree
+        slide.setAttribute("aria-hidden", String(i !== c.index));
+        slide.querySelectorAll("a, button").forEach(function (el) {
+          el.tabIndex = i === c.index ? 0 : -1;
         });
-        dotsEl.appendChild(d);
       });
+
+      if (c.dots) {
+        c.dots.forEach(function (dot, i) {
+          var isActive = i === c.index;
+          dot.classList.toggle("active", isActive);
+          dot.setAttribute("aria-current", String(isActive));
+        });
+      }
     }
 
-    if (slides.length > 1) {
-      timers[id] = setInterval(function () {
-        step(id, 1);
-      }, 4000);
+    function step(id, dir) {
+      var c = carousels[id];
+      if (!c) return;
+      c.index = (c.index + dir + c.count) % c.count;
+      draw(id);
+      restart(id);
     }
-  }
 
-  function step(id, dir) {
-    var s = states[id];
-    if (!s) return;
-    s.i = (s.i + dir + s.n) % s.n;
-    draw(id);
-    resetTimer(id);
-  }
+    function jump(id, i) {
+      var c = carousels[id];
+      if (!c) return;
+      c.index = i;
+      draw(id);
+      restart(id);
+    }
 
-  function jump(id, idx) {
-    var s = states[id];
-    if (!s) return;
-    s.i = idx;
-    draw(id);
-    resetTimer(id);
-  }
+    function stop(id) {
+      var c = carousels[id];
+      if (c && c.timer) {
+        clearInterval(c.timer);
+        c.timer = null;
+      }
+    }
 
-  function draw(id) {
-    var s = states[id];
-    var wrap = document.getElementById("carousel-" + id);
-    if (!wrap || !s) return;
-    wrap.style.transform = "translateX(-" + s.i * 100 + "%)";
-    var dotsEl = document.getElementById("indicators-" + id);
-    if (dotsEl) {
-      dotsEl.querySelectorAll(".indicator").forEach(function (d, i) {
-        d.classList.toggle("active", i === s.i);
+    function start(id) {
+      var c = carousels[id];
+      if (!c || c.count < 2 || c.timer || c.paused || reduceMotion) return;
+      c.timer = setInterval(function () {
+        c.index = (c.index + 1) % c.count;
+        draw(id);
+      }, AUTOPLAY_MS);
+    }
+
+    function restart(id) {
+      stop(id);
+      start(id);
+    }
+
+    function initCarousel(id) {
+      var track = document.getElementById("carousel-" + id);
+      if (!track) return;
+
+      var slides = Array.prototype.slice.call(
+        track.querySelectorAll(".carousel-slide"),
+      );
+      if (!slides.length) return;
+
+      var region = track.closest(".project-carousel");
+      var dotsWrap = document.getElementById("indicators-" + id);
+      var dots = [];
+
+      if (dotsWrap && slides.length > 1) {
+        slides.forEach(function (_, i) {
+          var dot = document.createElement("button");
+          dot.type = "button";
+          dot.className = "indicator" + (i === 0 ? " active" : "");
+          dot.setAttribute("aria-label", "Show screenshot " + (i + 1));
+          dot.addEventListener("click", function () {
+            jump(id, i);
+          });
+          dotsWrap.appendChild(dot);
+          dots.push(dot);
+        });
+      }
+
+      carousels[id] = {
+        track: track,
+        slides: slides,
+        dots: dots,
+        count: slides.length,
+        index: 0,
+        timer: null,
+        paused: false,
+      };
+
+      // Hide the controls entirely when there's nothing to page through
+      if (slides.length < 2 && region) {
+        region.querySelectorAll(".carousel-btn").forEach(function (b) {
+          b.style.display = "none";
+        });
+      }
+
+      if (region) {
+        region.setAttribute("role", "region");
+        region.setAttribute("aria-roledescription", "carousel");
+
+        // Pause while the visitor is actually looking at it
+        ["mouseenter", "focusin"].forEach(function (evt) {
+          region.addEventListener(evt, function () {
+            carousels[id].paused = true;
+            stop(id);
+          });
+        });
+        ["mouseleave", "focusout"].forEach(function (evt) {
+          region.addEventListener(evt, function () {
+            carousels[id].paused = false;
+            start(id);
+          });
+        });
+
+        // Arrow-key navigation
+        region.addEventListener("keydown", function (e) {
+          if (e.key === "ArrowLeft") {
+            e.preventDefault();
+            step(id, -1);
+          } else if (e.key === "ArrowRight") {
+            e.preventDefault();
+            step(id, 1);
+          }
+        });
+
+        // Swipe on touch devices
+        var startX = null;
+        region.addEventListener(
+          "touchstart",
+          function (e) {
+            startX = e.touches[0].clientX;
+            stop(id);
+          },
+          { passive: true },
+        );
+        region.addEventListener(
+          "touchend",
+          function (e) {
+            if (startX === null) return;
+            var delta = e.changedTouches[0].clientX - startX;
+            if (Math.abs(delta) > 45) step(id, delta < 0 ? 1 : -1);
+            startX = null;
+            start(id);
+          },
+          { passive: true },
+        );
+      }
+
+      draw(id);
+      start(id);
+    }
+
+    ["azabuild", "eskolar", "travellink", "travelweave"].forEach(initCarousel);
+
+    document.querySelectorAll(".carousel-btn").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        step(btn.dataset.carousel, parseInt(btn.dataset.dir, 10));
       });
+    });
+
+    // Stop every autoplay timer while the tab is in the background
+    document.addEventListener("visibilitychange", function () {
+      Object.keys(carousels).forEach(function (id) {
+        if (document.hidden) {
+          stop(id);
+        } else {
+          start(id);
+        }
+      });
+    });
+
+    /* ── Lightbox ───────────────────────────────────────── */
+    var lightbox = document.getElementById("lightbox");
+    var lightboxImg = document.getElementById("lightboxImg");
+    var lightboxCap = document.getElementById("lightboxCaption");
+    var lightboxClose = document.getElementById("lightboxClose");
+    var lastFocused = null;
+
+    function openLightbox(src, caption) {
+      lightboxImg.src = src;
+      lightboxImg.alt = caption;
+      lightboxCap.textContent = caption;
+      lightbox.classList.add("open");
+      document.body.style.overflow = "hidden";
+      lightboxClose.focus();
     }
-  }
 
-  function resetTimer(id) {
-    if (!timers[id]) return;
-    clearInterval(timers[id]);
-    var s = states[id];
-    if (s && s.n > 1) {
-      timers[id] = setInterval(function () {
-        step(id, 1);
-      }, 4000);
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      document.body.style.overflow = "";
+      lightboxImg.src = "";
+      lightboxImg.alt = "";
+      if (lastFocused) lastFocused.focus();
     }
-  }
 
-  ["azabuild", "eskolar", "travellink", "travelweave"].forEach(initCarousel);
-
-  /* must be on window so HTML onclick="moveCarousel(...)" can reach it */
-  window.moveCarousel = step;
-
-  /* ── ScrollReveal ─────────────────────────────────────── */
-  if (typeof ScrollReveal !== "undefined") {
-    ScrollReveal().reveal(".section", {
-      distance: "30px",
-      origin: "bottom",
-      duration: 800,
-      delay: 100,
-      easing: "ease",
-      reset: false,
+    // If a certificate image is missing, say so instead of showing a broken frame
+    lightboxImg.addEventListener("error", function () {
+      lightboxCap.textContent =
+        "This certificate image isn't available yet. Email me and I'll send a copy.";
     });
-    ScrollReveal().reveal(".skill-tag", {
-      distance: "20px",
-      origin: "bottom",
-      duration: 600,
-      delay: 50,
-      interval: 50,
-      reset: false,
+
+    document.querySelectorAll(".cert-view-btn").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        lastFocused = btn;
+        openLightbox(btn.dataset.certSrc, btn.dataset.certCaption);
+      });
     });
-    ScrollReveal().reveal(".project-card", {
-      distance: "30px",
-      origin: "bottom",
-      duration: 700,
-      delay: 100,
-      interval: 100,
-      reset: false,
+
+    lightboxClose.addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", function (e) {
+      if (e.target === lightbox) closeLightbox();
     });
-  }
 
-  /* ── Lightbox ─────────────────────────────────────────── */
-  var lightbox = document.getElementById("lightbox");
-  var lightboxImg = document.getElementById("lightboxImg");
-  var lightboxCap = document.getElementById("lightboxCaption");
-  var lightboxClose = document.getElementById("lightboxClose");
-
-  function closeLB() {
-    lightbox.classList.remove("open");
-    document.body.style.overflow = "";
-    lightboxImg.src = "";
-  }
-
-  window.openLightbox = function (src, caption) {
-    lightboxImg.src = src;
-    lightboxCap.textContent = caption;
-    lightbox.classList.add("open");
-    document.body.style.overflow = "hidden";
-  };
-
-  lightboxClose.addEventListener("click", closeLB);
-  lightbox.addEventListener("click", function (e) {
-    if (e.target === lightbox) closeLB();
+    document.addEventListener("keydown", function (e) {
+      if (!lightbox.classList.contains("open")) return;
+      if (e.key === "Escape") {
+        closeLightbox();
+      } else if (e.key === "Tab") {
+        // Only one focusable control in the dialog — keep focus inside it
+        e.preventDefault();
+        lightboxClose.focus();
+      }
+    });
   });
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && lightbox.classList.contains("open")) closeLB();
-  });
-});
+})();

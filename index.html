@@ -4,86 +4,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jericho Earl Martin - IT Student Portfolio</title>
+
+    <title>Jericho Earl B. Martin — Full-Stack Developer & BSIT Student</title>
+    <meta name="description"
+        content="Portfolio of Jericho Earl B. Martin, a 4th-year BSIT student from Davao del Sur State College building production systems for a construction firm and a local government unit. Laravel, React, .NET 10, WPF.">
+    <meta name="author" content="Jericho Earl B. Martin">
+    <link rel="canonical" href="https://martinnitram21.github.io/">
+
+    <!-- Link preview (LinkedIn, Facebook, Messenger, X) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Jericho Earl B. Martin — Full-Stack Developer & BSIT Student">
+    <meta property="og:description"
+        content="Building production systems for real clients: a construction estimation platform and an LGU scholarship system. Laravel · React · .NET 10 · WPF.">
+    <meta property="og:image" content="resource/uniformId.jpg">
+    <meta property="og:url" content="https://martinnitram21.github.io/">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Inline favicon so there is no 404 and no extra file to host -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%239b0f57'/><text x='50' y='71' font-size='58' font-family='Segoe UI,sans-serif' font-weight='700' fill='white' text-anchor='middle'>JM</text></svg>">
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollreveal/4.0.9/scrollreveal.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
     <!-- Navigation Bar -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main">
         <div class="nav-brand">
-            <h3>Jericho Earl B. Martin | Senior Year IT Student</h3>
+            <a href="#hero">Jericho Earl B. Martin</a>
+            <span class="nav-brand-sub">4th Year BSIT · Davao del Sur State College</span>
         </div>
-        <div class="nav-links">
+
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks"
+            aria-label="Open menu">
+            <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+
+        <div class="nav-links" id="navLinks">
             <a href="#hero" class="nav-link">About</a>
             <a href="#projects" class="nav-link">Projects</a>
             <a href="#skills" class="nav-link">Skills</a>
-            <a href="#certifications" class="nav-link">Certifications</a>
+            <a href="#certifications" class="nav-link">Credentials</a>
             <a href="#experience" class="nav-link">Experience</a>
             <a href="#contact" class="nav-link">Contact</a>
-            <a href="resource/ResumeDA.pdf" class="nav-link resume-nav" target="_blank">Resume</a>
+            <a href="resource/ResumeDA.pdf" class="nav-link resume-nav" target="_blank"
+                rel="noopener noreferrer">Resume</a>
         </div>
     </nav>
 
     <!-- Theme Toggle -->
     <header class="header">
-        <button class="theme-toggle" id="themeToggle">🌙</button>
+        <button class="theme-toggle" id="themeToggle" aria-label="Switch to dark theme" title="Switch theme">
+            <span aria-hidden="true">🌙</span>
+        </button>
     </header>
 
     <!-- Social Media Sidebar -->
-    <nav class="social-sidebar">
-        <a href="https://www.facebook.com/jericho.earl.martin/" class="social-link" title="Facebook" target="_blank">
-            <i class="fab fa-facebook-f"></i>
-        </a>
+    <nav class="social-sidebar" aria-label="Social profiles">
         <a href="https://www.linkedin.com/in/jericho-earl-martin-7262a8362/" class="social-link" title="LinkedIn"
-            target="_blank">
-            <i class="fab fa-linkedin-in"></i>
+            aria-label="LinkedIn profile" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
         </a>
-        <a href="https://github.com/Martinnitram21" class="social-link" title="GitHub" target="_blank">
-            <i class="fab fa-github"></i>
+        <a href="https://github.com/Martinnitram21" class="social-link" title="GitHub" aria-label="GitHub profile"
+            target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.facebook.com/jericho.earl.martin/" class="social-link" title="Facebook"
+            aria-label="Facebook profile" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-facebook-f" aria-hidden="true"></i>
         </a>
     </nav>
 
-    <main class="main-content">
+    <main class="main-content" id="main">
 
         <!-- Hero -->
         <section class="hero section" id="hero">
             <div class="hero-content">
-                <img src="resource/uniformId.jpg" alt="Jericho Earl Martin" class="profile-picture">
+                <img src="resource/uniformId.jpg" alt="Portrait of Jericho Earl B. Martin" class="profile-picture"
+                    width="250" height="250" fetchpriority="high">
                 <h1>Jericho Earl B. Martin</h1>
                 <div class="status-badge">
-                    <span class="status-dot"></span>
-                    Open to internships &nbsp;·&nbsp; Currently: AzaBuild + eSkolar+
+                    <span class="status-dot" aria-hidden="true"></span>
+                    Open to internships &nbsp;·&nbsp; Shipping AzaBuild &amp; eSkolar+
                 </div>
-                <h2><span id="typed-text"></span><span class="cursor">|</span></h2>
+                <p class="hero-role"><span id="typed-text"></span><span class="cursor" aria-hidden="true">|</span></p>
+
                 <div class="hero-description">
-                    <p>Hi, I'm <span class="highlight-name">Jericho Earl Martin</span> — a
-                        <span class="highlight-keyword">Senior Year BSIT student</span> from
+                    <p>I'm a <span class="highlight-keyword">senior BSIT student</span> at
                         <span class="highlight-keyword">Davao del Sur State College</span> and a
-                        <span class="highlight-keyword">Civil Service Examination (Professional) passer</span>.
-                        I've grown from learning the basics into building real systems for real clients —
-                        currently developing a <span class="highlight-tech">construction estimation platform</span>
-                        for an engineering firm and a
-                        <span class="highlight-tech">scholarship management system</span>
-                        commissioned by an LGU, both actively in development.
+                        <span class="highlight-keyword">Civil Service Professional passer</span>.
+                        Most of what I build isn't coursework — it's software with users waiting on it.
+                        <span class="highlight-tech">AzaBuild</span>, a construction estimation platform for an
+                        engineering firm, is now
+                        <a href="https://azabuild.cids.io" target="_blank" rel="noopener noreferrer"
+                            class="inline-link">live in production</a>, and
+                        <span class="highlight-tech">eSkolar+</span>, a scholarship administration system
+                        commissioned by a municipal government, is in active development.
                     </p>
-                    <p>My work spans <span class="highlight-keyword">full-stack web development</span>
-                        with <span class="highlight-tech">Laravel</span>,
-                        <span class="highlight-tech">React</span>, and
-                        <span class="highlight-tech">Alpine.js</span>, and
-                        <span class="highlight-keyword">desktop software development</span> with
-                        <span class="highlight-tech">.NET 10</span> and
-                        <span class="highlight-tech">WPF</span>.
-                        I've participated in the <span class="highlight-keyword">COIL International Program twice</span>
-                        — leading teams across Philippines × Indonesia in 2025
-                        and Philippines × Cambodia in 2026.
+                    <p>I work full-stack on the web with <span class="highlight-tech">Laravel</span>,
+                        <span class="highlight-tech">React</span> and <span class="highlight-tech">Alpine.js</span>,
+                        and on the desktop with <span class="highlight-tech">.NET 10</span> and
+                        <span class="highlight-tech">WPF</span>. Twice I've led teams through the
+                        <span class="highlight-keyword">COIL International Program</span> —
+                        Philippines × Indonesia in 2025, Philippines × Cambodia in 2026.
                     </p>
                 </div>
-                <a href="resource/ResumeDA.pdf" class="resume-btn" target="_blank">
-                    <i class="fas fa-download"></i> View Resume
-                </a>
+
+                <div class="hero-actions">
+                    <a href="resource/ResumeDA.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-file-arrow-down" aria-hidden="true"></i> View resume
+                    </a>
+                    <a href="mailto:jerichomartin805@gmail.com" class="btn btn-ghost">
+                        <i class="fas fa-envelope" aria-hidden="true"></i> Email me
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -93,185 +131,215 @@
             <div class="projects-grid">
 
                 <!-- AzaBuild -->
-                <div class="featured-project">
+                <article class="featured-project is-flagship">
                     <div class="project-carousel">
                         <div class="carousel-container" id="carousel-azabuild">
                             <div class="carousel-slide">
-                                <img src="resource/azabuild-1.png" alt="AzaBuild Dashboard">
+                                <img src="resource/azabuild-1.png" alt="AzaBuild project dashboard" loading="lazy">
                             </div>
                             <div class="carousel-slide">
-                                <img src="resource/azabuild-2.png" alt="AzaBuild Estimator">
+                                <img src="resource/azabuild-2.png" alt="AzaBuild cost estimator screen" loading="lazy">
                             </div>
                         </div>
-                        <button class="carousel-btn prev" onclick="moveCarousel(-1, 'azabuild')">‹</button>
-                        <button class="carousel-btn next" onclick="moveCarousel(1, 'azabuild')">›</button>
+                        <button class="carousel-btn prev" data-carousel="azabuild" data-dir="-1"
+                            aria-label="Previous AzaBuild screenshot">‹</button>
+                        <button class="carousel-btn next" data-carousel="azabuild" data-dir="1"
+                            aria-label="Next AzaBuild screenshot">›</button>
                         <div class="carousel-indicators" id="indicators-azabuild"></div>
                     </div>
                     <div class="project-content">
-                        <span class="project-badge">🏗️ In Progress · Solo Build · Capstone</span>
+                        <span class="project-badge badge-live">
+                            <span class="live-dot" aria-hidden="true"></span> Live in production · Solo build · Capstone
+                        </span>
                         <h3 class="project-title">AzaBuild — Construction Estimation System</h3>
                         <div class="project-stats">
                             <span>1,700+ Fajardo coefficients</span>
                             <span>150+ API routes</span>
-                            <span>Solo build</span>
+                            <span>Laravel 12 + React</span>
                             <span>Mobile sync</span>
                         </div>
                         <p class="project-description">
-                            Full-stack <strong>Construction Quantity Takeoff, Cost Estimation, and CPM
-                                Project Management</strong> system built solo for
-                            <strong>Azacon Builders and Realty OPC</strong>, Davao City.
-                            Powered by 1,700+ material coefficients from Max Fajardo's Simplified Construction Estimated (1995) with a full
-                            interpolation/extrapolation engine, Laravel 12 REST API, React frontend,
-                            task and worker management, weather integration, and PDF report generation.
+                            A quantity takeoff, cost estimation and CPM project management platform I built
+                            single-handedly for <strong>Azacon Builders and Realty OPC</strong> in Davao City,
+                            now in daily use by the firm. It runs an interpolation and extrapolation engine over
+                            1,700+ material coefficients from Max Fajardo's <em>Simplified Construction
+                                Estimate</em> (1995), backed by a Laravel 12 REST API and a React front end,
+                            with task and worker management, weather-aware scheduling and PDF report generation.
                         </p>
-                        <a href="https://github.com/Martinnitram21" class="project-link" target="_blank">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
+                        <div class="project-links">
+                            <a href="https://azabuild.cids.io" class="project-link" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> Visit azabuild.cids.io
+                            </a>
+                        </div>
                     </div>
-                </div>
+                </article>
 
                 <!-- eSkolar+ -->
-                <div class="featured-project">
+                <article class="featured-project">
                     <div class="project-carousel">
                         <div class="carousel-container" id="carousel-eskolar">
                             <div class="carousel-slide">
-                                <img src="resource/eskolar-1.png" alt="eSkolar+ Admin Dashboard">
+                                <img src="resource/eskolar-1.png" alt="eSkolar+ administrator dashboard" loading="lazy">
                             </div>
                             <div class="carousel-slide">
-                                <img src="resource/eskolar-2.png" alt="eSkolar+ Disbursements">
+                                <img src="resource/eskolar-2.png" alt="eSkolar+ disbursements screen" loading="lazy">
                             </div>
                         </div>
-                        <button class="carousel-btn prev" onclick="moveCarousel(-1, 'eskolar')">‹</button>
-                        <button class="carousel-btn next" onclick="moveCarousel(1, 'eskolar')">›</button>
+                        <button class="carousel-btn prev" data-carousel="eskolar" data-dir="-1"
+                            aria-label="Previous eSkolar+ screenshot">‹</button>
+                        <button class="carousel-btn next" data-carousel="eskolar" data-dir="1"
+                            aria-label="Next eSkolar+ screenshot">›</button>
                         <div class="carousel-indicators" id="indicators-eskolar"></div>
                     </div>
                     <div class="project-content">
-                        <span class="project-badge">🎓 In Progress · LGU Commissioned · Municipality of Sulop</span>
-                        <h3 class="project-title">eSkolar+: LSAS — LGU Scholarship Administration System</h3>
+                        <span class="project-badge">🎓 In development · Commissioned by the Municipality of Sulop</span>
+                        <h3 class="project-title">eSkolar+ (LSAS) — Scholarship Administration System</h3>
                         <div class="project-stats">
                             <span>LGU commissioned</span>
+                            <span>.NET 10 · WPF</span>
                             <span>CRS + GGMS integration</span>
-                            <span>Hostinger deployed</span>
                             <span>Capstone project</span>
                         </div>
                         <p class="project-description">
-                            Full <strong>desktop scholarship management system</strong> commissioned by the
-                            <strong>Municipality of Sulop, Davao del Sur</strong>. Built with .NET 10 and WPF,
-                            it handles the complete scholarship lifecycle — applications, review, disbursements,
-                            beneficiary validation against the Civil Registry System (CRS), GGMS government
-                            fund integration, email OTP login, PDF/Excel reports with in-app preview,
-                            and Hostinger cloud deployment.
+                            A desktop scholarship management system commissioned by the
+                            <strong>Municipality of Sulop, Davao del Sur</strong>, covering the full scholarship
+                            lifecycle — application intake, review, and disbursement. Built on .NET 10 and WPF,
+                            it validates beneficiaries against the Civil Registry System, integrates with GGMS
+                            for government fund tracking, secures sign-in with email OTP, and generates PDF and
+                            Excel reports with in-app preview. Deployed to Hostinger cloud.
                         </p>
-                        <a href="https://github.com/Martinnitram21" class="project-link" target="_blank">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
+                        <div class="project-links">
+                            <span class="repo-note">Source is private — commissioned by the LGU</span>
+                        </div>
                     </div>
-                </div>
+                </article>
 
                 <!-- TravelLink ASEAN -->
-                <div class="featured-project">
+                <article class="featured-project">
                     <div class="project-carousel">
                         <div class="carousel-container" id="carousel-travellink">
                             <div class="carousel-slide">
-                                <img src="resource/travellink-1.png" alt="TravelLink ASEAN Homepage">
+                                <img src="resource/travellink-1.png" alt="TravelLink ASEAN homepage" loading="lazy">
                             </div>
                             <div class="carousel-slide">
-                                <img src="resource/travellink-2.png" alt="TravelLink Culinary Guide">
+                                <img src="resource/travellink-2.png" alt="TravelLink ASEAN culinary guide"
+                                    loading="lazy">
                             </div>
                             <div class="carousel-slide">
-                                <img src="resource/travellink-3.png" alt="TravelLink Interactive Map">
+                                <img src="resource/travellink-3.png" alt="TravelLink ASEAN interactive map"
+                                    loading="lazy">
                             </div>
                             <div class="carousel-slide">
-                                <img src="resource/travellink-4.png" alt="TravelLink Culture Shop">
+                                <img src="resource/travellink-4.png" alt="TravelLink ASEAN culture shop"
+                                    loading="lazy">
                             </div>
                             <div class="carousel-slide">
-                                <img src="resource/travellink-5.png" alt="TravelLink AI Guide">
+                                <img src="resource/travellink-5.png" alt="TravelLink ASEAN AI guide" loading="lazy">
                             </div>
                             <div class="carousel-slide">
-                                <img src="resource/travellink-6.png" alt="TravelLink Plan Journey">
+                                <img src="resource/travellink-6.png" alt="TravelLink ASEAN journey planner"
+                                    loading="lazy">
                             </div>
                             <div class="carousel-slide">
-                                <img src="resource/travellink-7.png" alt="TravelLink Plan Journey">
+                                <img src="resource/travellink-7.png" alt="TravelLink ASEAN travel essentials"
+                                    loading="lazy">
                             </div>
                         </div>
-                        <button class="carousel-btn prev" onclick="moveCarousel(-1, 'travellink')">‹</button>
-                        <button class="carousel-btn next" onclick="moveCarousel(1, 'travellink')">›</button>
+                        <button class="carousel-btn prev" data-carousel="travellink" data-dir="-1"
+                            aria-label="Previous TravelLink screenshot">‹</button>
+                        <button class="carousel-btn next" data-carousel="travellink" data-dir="1"
+                            aria-label="Next TravelLink screenshot">›</button>
                         <div class="carousel-indicators" id="indicators-travellink"></div>
                     </div>
                     <div class="project-content">
-                        <span class="project-badge">🗺️ COIL International 2026 · Philippines × Cambodia · Team Lead</span>
-                        <h3 class="project-title">TravelLink ASEAN — Travel & Culture Platform</h3>
+                        <span class="project-badge">🗺️ COIL International 2026 · Philippines × Cambodia · Team
+                            lead</span>
+                        <h3 class="project-title">TravelLink ASEAN — Travel &amp; Culture Platform</h3>
                         <div class="project-stats">
                             <span>7 pages</span>
-                            <span>Laravel 13 · Alpine.js</span>
+                            <span>Laravel · Blade · Alpine.js</span>
                             <span>Team of 10</span>
-                            <span>PH × Cambodia</span>
+                            <span>2 countries</span>
                         </div>
                         <p class="project-description">
-                            Static multi-page travel and culture website built for the
-                            <strong>COIL International Program 2026</strong> —
-                            Philippines × Cambodia collaboration. Features an
-                            interactive SVG map, AI guide mockup, culture shop,
-                            culinary guide, and travel essentials — built with
-                            <strong>Laravel 13, Blade, Tailwind CSS v4, and Alpine.js</strong>.
-                            Led UI/UX and coordinated a team of 10 across two countries.
+                            A multi-page travel and culture site built for the COIL International Program 2026,
+                            a Philippines × Cambodia collaboration. It includes an interactive SVG map, an AI
+                            guide mockup, a culture shop, a culinary guide and a travel essentials section,
+                            built with Laravel, Blade, Tailwind CSS v4 and Alpine.js. I led UI/UX and
+                            coordinated a team of 10 across both countries.
                         </p>
-                        <a href="https://github.com/Martinnitram21" class="project-link" target="_blank">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
+                        <div class="project-links">
+                            <a href="https://github.com/Martinnitram21" class="project-link" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fab fa-github" aria-hidden="true"></i> View on GitHub
+                            </a>
+                        </div>
                     </div>
-                </div>
+                </article>
 
                 <!-- TravelWeave -->
-                <div class="featured-project">
+                <article class="featured-project">
                     <div class="project-carousel">
                         <div class="carousel-container" id="carousel-travelweave">
                             <div class="carousel-slide">
-                                <img src="resource/travelweave-1.png" alt="TravelWeave Homepage">
+                                <img src="resource/travelweave-1.png" alt="TravelWeave homepage" loading="lazy">
                             </div>
                             <div class="carousel-slide">
-                                <img src="resource/travelweave-2.png" alt="TravelWeave Destinations">
+                                <img src="resource/travelweave-2.png" alt="TravelWeave destinations" loading="lazy">
                             </div>
                             <div class="carousel-slide">
-                                <img src="resource/travelweave-3.png" alt="TravelWeave Itinerary">
+                                <img src="resource/travelweave-3.png" alt="TravelWeave itinerary planner"
+                                    loading="lazy">
                             </div>
                             <div class="carousel-slide">
-                                <img src="resource/travelweave-4.png" alt="TravelWeave Culinary Guide">
+                                <img src="resource/travelweave-4.png" alt="TravelWeave culinary guide" loading="lazy">
                             </div>
                             <div class="carousel-slide">
-                                <img src="resource/travelweave-5.png" alt="TravelWeave Map">
+                                <img src="resource/travelweave-5.png" alt="TravelWeave map" loading="lazy">
                             </div>
                         </div>
-                        <button class="carousel-btn prev" onclick="moveCarousel(-1, 'travelweave')">‹</button>
-                        <button class="carousel-btn next" onclick="moveCarousel(1, 'travelweave')">›</button>
+                        <button class="carousel-btn prev" data-carousel="travelweave" data-dir="-1"
+                            aria-label="Previous TravelWeave screenshot">‹</button>
+                        <button class="carousel-btn next" data-carousel="travelweave" data-dir="1"
+                            aria-label="Next TravelWeave screenshot">›</button>
                         <div class="carousel-indicators" id="indicators-travelweave"></div>
                     </div>
                     <div class="project-content">
-                        <span class="project-badge">🌟 COIL International 2025 · Philippines × Indonesia · Team Lead</span>
+                        <span class="project-badge">🌟 COIL International 2025 · Philippines × Indonesia · Team
+                            lead</span>
                         <h3 class="project-title">TravelWeave — Tourism Platform</h3>
+                        <div class="project-stats">
+                            <span>Laravel</span>
+                            <span>Figma UI/UX</span>
+                            <span>Team of 8</span>
+                            <span>2 countries</span>
+                        </div>
                         <p class="project-description">
-                            Full-stack Laravel tourism website developed through international collaboration
-                            between <strong>Philippines and Indonesia</strong> (Island Bridge Studios) as
-                            part of the COIL program. Led a team of 8 students and designed the complete
-                            UI/UX in Figma. Features destination browsing, itinerary and budget planning,
-                            and culinary guides showcasing Southeast Asian culture.
+                            A full-stack Laravel tourism site built with Island Bridge Studios in Indonesia as
+                            part of the 2025 COIL program. I led a team of 8 students and designed the complete
+                            UI/UX in Figma. Features include destination browsing, itinerary and budget
+                            planning, and culinary guides showcasing Southeast Asian culture.
                         </p>
-                        <a href="https://github.com/Lanxxxe/coil-project" class="project-link" target="_blank">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
+                        <div class="project-links">
+                            <a href="https://github.com/Lanxxxe/coil-project" class="project-link" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fab fa-github" aria-hidden="true"></i> View on GitHub
+                            </a>
+                        </div>
                     </div>
-                </div>
+                </article>
 
             </div>
         </section>
 
         <!-- Skills -->
         <section class="skills section" id="skills">
-            <h2 class="section-title">Skills & Technologies</h2>
+            <h2 class="section-title">Skills &amp; Technologies</h2>
 
             <div class="skill-category">
-                <h3 class="category-title">Currently Using</h3>
-                <p class="category-subtitle">Active in current projects</p>
+                <h3 class="category-title">Working with daily</h3>
+                <p class="category-subtitle">In active use across AzaBuild, eSkolar+ and COIL projects</p>
                 <div class="skills-grid">
                     <div class="skill-tag">C#</div>
                     <div class="skill-tag">.NET 10</div>
@@ -292,8 +360,8 @@
             </div>
 
             <div class="skill-category">
-                <h3 class="category-title">Familiar With</h3>
-                <p class="category-subtitle">Can use when needed</p>
+                <h3 class="category-title">Comfortable picking up</h3>
+                <p class="category-subtitle">Used in coursework or smaller projects</p>
                 <div class="skills-grid">
                     <div class="skill-tag muted">Java</div>
                     <div class="skill-tag muted">Python</div>
@@ -309,168 +377,208 @@
 
         <!-- Certifications & Education -->
         <section class="education section" id="certifications">
-            <h2 class="section-title">Certifications & Education</h2>
+            <h2 class="section-title">Credentials &amp; Education</h2>
             <div class="education-content">
 
                 <div class="education-item">
                     <div class="education-header">
-                        <div class="education-degree">Bachelor of Science in Information Technology</div>
+                        <div class="education-degree">BS Information Technology</div>
                         <div class="education-school">Davao del Sur State College</div>
-                        <div class="education-date">Senior Year Student · Expected Graduation: 2027</div>
+                        <div class="education-date">4th year · Expected graduation 2027</div>
                     </div>
                 </div>
 
                 <div class="education-item">
                     <div class="certifications">
-                        <h3>Certifications & Achievements</h3>
+                        <h3>Certifications &amp; Achievements</h3>
+
                         <div class="cert-item cert-highlight">
-                            <div class="cert-name">✅ Civil Service Examination Passer — Career Service Professional
-                            </div>
+                            <div class="cert-name">Civil Service Examination — Career Service Professional</div>
                             <div class="cert-date">2026</div>
-                            <p style="margin-top:0.5rem; font-size:0.95rem;">
-                                Passed the Career Service Examination (Professional Level) administered
-                                by the Civil Service Commission of the Philippines.
+                            <p class="cert-blurb">
+                                Passed the Career Service Examination at the Professional level, administered by
+                                the Civil Service Commission of the Philippines.
                             </p>
-                            <button class="cert-view-btn"
-                                onclick="openLightbox('resource/cert-cse.jpg', 'Civil Service Examination — Professional · 2026')">
-                                <i class="fas fa-image"></i> View Certificate
+                            <button class="cert-view-btn" type="button"
+                                data-cert-src="resource/cert-cse.jpg"
+                                data-cert-caption="Civil Service Examination — Professional · 2026">
+                                <i class="fas fa-image" aria-hidden="true"></i> View certificate
                             </button>
                         </div>
+
                         <div class="cert-item cert-highlight">
-                            <div class="cert-name">🏆 COIL International Collaboration Certificate — Philippines × Cambodia</div>
-                            <div class="cert-date">2026 · Certificate pending</div>
-                            <p style="margin-top:0.5rem; font-size:0.95rem;">
-                                Participated in the COIL International Program 2026
-                                — Philippines × Cambodia collaboration, TravelLink ASEAN.
-                                Led a team of 10.
+                            <div class="cert-name">COIL International Collaboration — Philippines × Cambodia</div>
+                            <div class="cert-date">2026 · Certificate pending release</div>
+                            <p class="cert-blurb">
+                                Led a team of 10 in the COIL International Program 2026, a Philippines × Cambodia
+                                collaboration that produced TravelLink ASEAN.
                             </p>
-                            <button class="cert-view-btn"
-                                onclick="openLightbox('resource/cert-coil-2026.jpg', 'COIL International Collaboration · Sept–Oct 2025')">
-                                <i class="fas fa-image"></i> View Certificate
-                            </button>
                         </div>
+
                         <div class="cert-item cert-highlight">
-                            <div class="cert-name">🏆 COIL International Collaboration Certificate</div>
+                            <div class="cert-name">COIL International Collaboration — Philippines × Indonesia</div>
                             <div class="cert-date">September – October 2025</div>
-                            <p style="margin-top:0.5rem; font-size:0.95rem;">
-                                Participated in the Collaborative Online International Learning (COIL)
-                                program "Global Web Design: Bridging Cultures through Digital Interfaces"
-                                — Philippines–Indonesia collaboration. Led a team of 8.
+                            <p class="cert-blurb">
+                                Completed "Global Web Design: Bridging Cultures through Digital Interfaces" and
+                                led a team of 8 through the Philippines–Indonesia collaboration.
                             </p>
-                            <button class="cert-view-btn"
-                                onclick="openLightbox('resource/cert-coil-2025.jpg', 'COIL International Collaboration · Sept–Oct 2025')">
-                                <i class="fas fa-image"></i> View Certificate
+                            <button class="cert-view-btn" type="button"
+                                data-cert-src="resource/cert-coil-2025.jpg"
+                                data-cert-caption="COIL International Collaboration · September–October 2025">
+                                <i class="fas fa-image" aria-hidden="true"></i> View certificate
                             </button>
                         </div>
+
                         <div class="cert-item">
-                            <span class="cert-name">PAGHULAGWAY: A Graphic Design Workshop</span>
-                            <span class="cert-date">September 26, 2025</span>
-                            <button class="cert-view-btn"
-                                onclick="openLightbox('resource/cert-paghulagway.jpg', 'PAGHULAGWAY: A Graphic Design Workshop · Sept 26, 2025')">
-                                <i class="fas fa-image"></i> View Certificate
+                            <div class="cert-row">
+                                <span class="cert-name">PAGHULAGWAY: A Graphic Design Workshop</span>
+                                <span class="cert-date">September 26, 2025</span>
+                            </div>
+                            <button class="cert-view-btn" type="button"
+                                data-cert-src="resource/cert-paghulagway.jpg"
+                                data-cert-caption="PAGHULAGWAY: A Graphic Design Workshop · September 26, 2025">
+                                <i class="fas fa-image" aria-hidden="true"></i> View certificate
                             </button>
                         </div>
+
                         <div class="cert-item">
-                            <span class="cert-name">XENEA Campus-Wide Blockchain Experience</span>
-                            <span class="cert-date">July 25, 2025</span>
-                            <button class="cert-view-btn"
-                                onclick="openLightbox('resource/cert-xenea.jpg', 'XENEA Campus-Wide Blockchain Experience · July 25, 2025')">
-                                <i class="fas fa-image"></i> View Certificate
+                            <div class="cert-row">
+                                <span class="cert-name">XENEA Campus-Wide Blockchain Experience</span>
+                                <span class="cert-date">July 25, 2025</span>
+                            </div>
+                            <button class="cert-view-btn" type="button"
+                                data-cert-src="resource/cert-xenea.jpg"
+                                data-cert-caption="XENEA Campus-Wide Blockchain Experience · July 25, 2025">
+                                <i class="fas fa-image" aria-hidden="true"></i> View certificate
                             </button>
                         </div>
+
                         <div class="cert-item">
-                            <span class="cert-name">BATCHES Workshop Series</span>
-                            <span class="cert-date">May 7, 2025</span>
-                            <button class="cert-view-btn"
-                                onclick="openLightbox('resource/cert-batches.jpg', 'BATCHES Workshop Series · May 7, 2025')">
-                                <i class="fas fa-image"></i> View Certificate
+                            <div class="cert-row">
+                                <span class="cert-name">BATCHES Workshop Series</span>
+                                <span class="cert-date">May 7, 2025</span>
+                            </div>
+                            <button class="cert-view-btn" type="button"
+                                data-cert-src="resource/cert-batches.jpg"
+                                data-cert-caption="BATCHES Workshop Series · May 7, 2025">
+                                <i class="fas fa-image" aria-hidden="true"></i> View certificate
                             </button>
                         </div>
                     </div>
-
                 </div>
+
+            </div>
         </section>
 
         <!-- Experience -->
         <section class="experience section" id="experience">
-            <h2 class="section-title">Work Experience</h2>
+            <h2 class="section-title">Experience</h2>
             <div class="experience-content">
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="experience-title">Developer (Commissioned)</div>
+                        <div class="experience-company">Azacon Builders and Realty OPC · Davao City</div>
+                        <div class="experience-date">2025 – Present</div>
+                    </div>
+                    <div class="experience-description">
+                        <ul>
+                            <li>Built and shipped AzaBuild end to end as the sole developer, now live in production
+                                at azabuild.cids.io</li>
+                            <li>Designed a Laravel 12 REST API with 150+ routes serving a React front end and mobile
+                                sync</li>
+                            <li>Implemented an interpolation engine over 1,700+ published material coefficients for
+                                cost estimation</li>
+                            <li>Gathered requirements directly from the firm's engineers and iterated on their
+                                feedback</li>
+                        </ul>
+                    </div>
+                </div>
+
                 <div class="experience-item">
                     <div class="experience-header">
                         <div class="experience-title">Administrative Support (Volunteer)</div>
-                        <div class="experience-company">MEDAPHARMA AND MEDICAL SUPPLIES DISTRIBUTION</div>
+                        <div class="experience-company">Medapharma and Medical Supplies Distribution</div>
                         <div class="experience-date">2024 – Present</div>
                     </div>
                     <div class="experience-description">
                         <ul>
-                            <li>Processed pharmacy license renewal by coordinating with government agencies</li>
+                            <li>Processed pharmacy license renewals by coordinating with government agencies</li>
                             <li>Assisted in registering a pharmacy warehouse with the FDA</li>
-                            <li>Managed compliance documents and professional communications</li>
-                            <li>Data encoding for EDPMS (Electronic Drug Price Monitoring System)</li>
+                            <li>Managed compliance documents and professional correspondence</li>
+                            <li>Handled data encoding for the Electronic Drug Price Monitoring System (EDPMS)</li>
                         </ul>
                     </div>
                 </div>
+
             </div>
         </section>
 
         <!-- Contact -->
         <section class="contact section" id="contact">
-            <h2 class="section-title">Want to Connect?</h2>
+            <h2 class="section-title">Get in touch</h2>
+            <p class="contact-intro">
+                I'm looking for an internship where I can keep shipping production software. The fastest way to
+                reach me is email.
+            </p>
+
             <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
+                <a class="contact-item" href="mailto:jerichomartin805@gmail.com">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
                     <span class="contact-detail">jerichomartin805@gmail.com</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
+                </a>
+                <a class="contact-item" href="tel:+639483887766">
+                    <i class="fas fa-phone" aria-hidden="true"></i>
                     <span class="contact-detail">+63 948 388 7766</span>
-                </div>
+                </a>
                 <div class="contact-item">
-                    <i class="fab fa-discord"></i>
+                    <i class="fab fa-discord" aria-hidden="true"></i>
                     <span class="contact-detail">scrappycoco21</span>
                 </div>
             </div>
+
             <div class="contact-links">
-                <a href="https://www.facebook.com/jericho.earl.martin/" class="contact-link"
-                    target="_blank">Facebook</a>
                 <a href="https://www.linkedin.com/in/jericho-earl-martin-7262a8362/" class="contact-link"
-                    target="_blank">LinkedIn</a>
-                <a href="https://github.com/Martinnitram21" class="contact-link" target="_blank">GitHub</a>
-                <a href="resource/ResumeDA.pdf" class="contact-link" target="_blank">Resume</a>
+                    target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/Martinnitram21" class="contact-link" target="_blank"
+                    rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.facebook.com/jericho.earl.martin/" class="contact-link" target="_blank"
+                    rel="noopener noreferrer">Facebook</a>
+                <a href="resource/ResumeDA.pdf" class="contact-link" target="_blank"
+                    rel="noopener noreferrer">Resume</a>
             </div>
-            <div class="quote-box">
-                <blockquote class="quote-text">"We suffer more in imagination than in reality."</blockquote>
-                <cite class="quote-author">— Seneca</cite>
-            </div>
+
+            <figure class="quote-box">
+                <blockquote class="quote-text">We suffer more in imagination than in reality.</blockquote>
+                <figcaption class="quote-author">— Seneca</figcaption>
+            </figure>
         </section>
 
     </main>
 
     <!-- Back to Top -->
     <a href="#hero" id="backToTop" class="back-to-top" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </a>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <p class="copyright">
-                <i class="fas fa-copyright"></i> 2026 Jericho Earl B. Martin. All Rights Reserved.
-            </p>
-            <p class="footer-built">Built with HTML · CSS · JS &nbsp;·&nbsp; Hosted on GitHub Pages</p>
+            <p class="copyright">© <span id="year">2026</span> Jericho Earl B. Martin</p>
+            <p class="footer-built">Hand-built with HTML, CSS and vanilla JavaScript · Hosted on GitHub Pages</p>
         </div>
     </footer>
 
     <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Certificate viewer">
         <div class="lightbox-inner">
-            <img class="lightbox-img" id="lightboxImg" src="" alt="Certificate">
+            <img class="lightbox-img" id="lightboxImg" src="" alt="">
             <span class="lightbox-caption" id="lightboxCaption"></span>
         </div>
-        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close certificate viewer">&times;</button>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 
 </html>
