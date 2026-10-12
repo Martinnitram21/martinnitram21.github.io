@@ -380,7 +380,7 @@
         "This certificate image isn't available yet. Email me and I'll send a copy.";
     });
 
-    document.querySelectorAll(".cert-view-btn").forEach(function (btn) {
+    document.querySelectorAll("button.cert-view-btn").forEach(function (btn) {
       btn.addEventListener("click", function () {
         lastFocused = btn;
         openLightbox(btn.dataset.certSrc, btn.dataset.certCaption);

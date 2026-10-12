@@ -886,6 +886,10 @@ body {
     transform var(--transition);
 }
 
+a.cert-view-btn {
+  text-decoration: none;
+}
+
 .cert-view-btn:hover {
   background: var(--primary-color);
   color: #fff;
