@@ -886,6 +886,10 @@ body {
     transform var(--transition);
 }
 
+.cert-view-btn + .cert-view-btn {
+  margin-left: 0.5rem;
+}
+
 a.cert-view-btn {
   text-decoration: none;
 }

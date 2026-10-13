@@ -7,7 +7,7 @@
 
     <title>Jericho Earl B. Martin — Full-Stack Developer & BSIT Student</title>
     <meta name="description"
-        content="Portfolio of Jericho Earl B. Martin, a 4th-year BSIT student from Davao del Sur State College building production systems for a construction firm and a local government unit. Laravel, React, .NET 10, WPF.">
+        content="Portfolio of Jericho Earl B. Martin, a 4th-year BSIT student from Davao del Sur State College building production systems for a construction firm and a local government unit. Laravel, React, Alpine.js.">
     <meta name="author" content="Jericho Earl B. Martin">
     <link rel="canonical" href="https://martinnitram21.github.io/">
 
@@ -15,7 +15,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Jericho Earl B. Martin — Full-Stack Developer & BSIT Student">
     <meta property="og:description"
-        content="Building production systems for real clients: a construction estimation platform and an LGU scholarship system. Laravel · React · .NET 10 · WPF.">
+        content="Building production systems for real clients: a construction estimation platform and an LGU scholarship system. Laravel · React · Alpine.js.">
     <meta property="og:image" content="resource/uniformId.jpg">
     <meta property="og:url" content="https://martinnitram21.github.io/">
     <meta name="twitter:card" content="summary_large_image">
@@ -89,7 +89,7 @@
                 <h1>Jericho Earl B. Martin</h1>
                 <div class="status-badge">
                     <span class="status-dot" aria-hidden="true"></span>
-                    Open to internships &nbsp;·&nbsp; Shipping AzaBuild &amp; eSkolar+
+                    Open to internships &nbsp;·&nbsp; Shipping AzaBuild, eSkolar+ &amp; Klaru
                 </div>
                 <p class="hero-role"><span id="typed-text"></span><span class="cursor" aria-hidden="true">|</span></p>
 
@@ -103,7 +103,7 @@
                         <a href="https://azabuild.cids.io" target="_blank" rel="noopener noreferrer"
                             class="inline-link">live in production</a>, and
                         <span class="highlight-tech">eSkolar+</span>, a scholarship administration system
-                        commissioned by a municipal government, is in active development.
+                        commissioned by a municipal government, is now live as part of the eSulopGov systems.
                     </p>
                     <p>I work full-stack on the web with <span class="highlight-tech">Laravel</span>,
                         <span class="highlight-tech">React</span> and <span class="highlight-tech">Alpine.js</span>,
@@ -113,8 +113,9 @@
                         Philippines × Indonesia in 2025, Philippines × Cambodia in 2026 — and I was invited
                         back as a <span class="highlight-keyword">student resource speaker</span> at
                         Davao del Sur State College's COIL Re-echo session. In 2026 I also
-                        exhibited at the <span class="highlight-keyword">Regional Science and Technology
-                            Week (RSTW)</span> for the municipality's GGMS group of integrated systems.
+                        led the student team behind <span class="highlight-keyword">eSulopGov</span> and exhibited
+                        it at the <span class="highlight-keyword">Regional Science, Technology, and Innovation
+                            Week (RSTW)</span>.
                     </p>
                 </div>
 
@@ -157,18 +158,19 @@
                         </span>
                         <h3 class="project-title">AzaBuild — Construction Estimation System</h3>
                         <div class="project-stats">
-                            <span>1,700+ Fajardo coefficients</span>
-                            <span>150+ API routes</span>
                             <span>Laravel 12 + React</span>
-                            <span>Mobile sync</span>
+                            <span>Quantity takeoff &amp; costing</span>
+                            <span>CPM-PERT scheduling</span>
+                            <span>Offline Android app</span>
                         </div>
                         <p class="project-description">
-                            A quantity takeoff, cost estimation and CPM project management platform I built
-                            single-handedly for <strong>Azacon Builders and Realty OPC</strong> in Davao City,
-                            now in daily use by the firm. It runs an interpolation and extrapolation engine over
-                            1,700+ material coefficients from Max Fajardo's <em>Simplified Construction
-                                Estimate</em> (1995), backed by a Laravel 12 REST API and a React front end,
-                            with task and worker management, weather-aware scheduling and PDF report generation.
+                            A construction management system I built single-handedly for
+                            <strong>Azacon Builders and Realty OPC</strong> in Davao City, now live and in daily
+                            use by the firm. One specification drives material quantities, itemized cost estimates
+                            and a CPM-PERT schedule, using coefficients from Max Fajardo's <em>Simplified
+                                Construction Estimate</em> (1995) that estimators can check against the book. It adds
+                            weather-aware delay tracking, branded PDF reports, an Android app that syncs field
+                            updates offline, and AzaBuild Lite, a no-account material calculator for homeowners.
                         </p>
                         <div class="project-links">
                             <a href="https://azabuild.cids.io" class="project-link" target="_blank"
@@ -197,34 +199,77 @@
                         <div class="carousel-indicators" id="indicators-eskolar"></div>
                     </div>
                     <div class="project-content">
-                        <span class="project-badge">🎓 In development · Commissioned by the Municipality of Sulop</span>
+                        <span class="project-badge badge-live">
+                            <span class="live-dot" aria-hidden="true"></span> Live · Commissioned by the Municipality of Sulop
+                        </span>
                         <h3 class="project-title">eSkolar+ (LSAS) — Scholarship Administration System</h3>
                         <div class="project-stats">
                             <span>LGU commissioned</span>
-                            <span>.NET 10 · WPF</span>
+                            <span>Laravel + React · MySQL</span>
                             <span>CRS + GGMS integration</span>
+                            <span>Solo developer</span>
                             <span>Exhibited at RSTW 2026</span>
-                            <span>Capstone project</span>
                         </div>
                         <p class="project-description">
-                            A desktop scholarship management system commissioned by the
+                            A web-based scholarship management system commissioned by the
                             <strong>Municipality of Sulop, Davao del Sur</strong>, covering the full scholarship
-                            lifecycle — application intake, review, and disbursement. Built on .NET 10 and WPF,
-                            it validates beneficiaries against the Civil Registry System, integrates with GGMS
-                            for government fund tracking, secures sign-in with email OTP, and generates PDF and
-                            Excel reports with in-app preview. Deployed to Hostinger cloud.
+                            lifecycle — application intake, review, and disbursement. Built with Laravel, React and
+                            MySQL, it validates beneficiaries against the Civil Registry System, integrates with
+                            GGMS for government fund tracking, exports reports, and is hosted on Hostinger. I was
+                            its solo developer.
                         </p>
                         <p class="project-description">
-                            eSkolar+ is one of the systems in the municipality's <strong>GGMS group</strong> of
-                            integrated digital services. I exhibited the group at the
-                            <strong>Regional Science and Technology Week (RSTW)</strong>, presenting it to
-                            the public alongside the other participating institutions.
+                            eSkolar+ is part of <strong>eSulopGov</strong>, the municipality's group of integrated
+                            digital systems, which is now live. As the student leader of the eSulopGov program, I
+                            managed the other students' systems and spoke with municipal stakeholders, and I
+                            exhibited the group at the 2026 <strong>Regional Science, Technology, and Innovation
+                                Week (RSTW)</strong> in Davao del Sur alongside other participating institutions.
                         </p>
                         <div class="project-links">
                             <span class="repo-note">Source is private — commissioned by the LGU</span>
-                            <a href="resource/CERTIFICATE%20OF%20APPEARANCE%20-%20JERICHO%20EARL%20MARTIN.pdf"
-                                class="project-link" target="_blank" rel="noopener noreferrer">
+                            <a href="resource/cert-rstw-appearance.jpg" class="project-link" target="_blank"
+                                rel="noopener noreferrer">
                                 <i class="fas fa-award" aria-hidden="true"></i> RSTW certificate
+                            </a>
+                            <a href="https://sulopcris.info/" class="project-link" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> Visit sulopcris.info
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Klaru -->
+                <article class="featured-project">
+                    <div class="project-content">
+                        <span class="project-badge">🩺 IT Olympiad Davao 2026 · Pitching October 16, 2026</span>
+                        <h3 class="project-title">Klaru — Lab Results, Explained in Your Language</h3>
+                        <div class="project-stats">
+                            <span>Bisaya · Filipino · English</span>
+                            <span>Expo · React Native · Supabase</span>
+                            <span>Laravel 13 portal</span>
+                            <span>Team of 3 + coach</span>
+                        </div>
+                        <p class="project-description">
+                            A health-literacy app for Filipino families. Photograph a lab result and Klaru explains
+                            every value in plain language, flags how urgent it is, and keeps a whole family's results,
+                            trends and visit notes in one place. A health-center portal, shown as a working preview
+                            on demo data, lets a doctor review a result and answer appointment requests. Klaru
+                            explains values; it never diagnoses.
+                        </p>
+                        <p class="project-description">
+                            I built the Android app and the Laravel web portal and landing page. Our team from Davao
+                            del Sur State College is presenting it at IT Olympiad Davao on October 16.
+                        </p>
+                        <div class="project-links">
+                            <span class="repo-note">Demo build with sample data</span>
+                            <a href="https://klaru.cids.io" class="project-link" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> Visit klaru.cids.io
+                            </a>
+                            <a href="https://github.com/Martinnitram21/klaru-releases/releases/download/v1.0.0/klaru.apk"
+                                class="project-link" rel="noopener noreferrer">
+                                <i class="fab fa-android" aria-hidden="true"></i> Download demo APK
                             </a>
                         </div>
                     </div>
@@ -414,25 +459,25 @@
                                 Passed the Career Service Examination at the Professional level, administered by
                                 the Civil Service Commission of the Philippines.
                             </p>
-                            <button class="cert-view-btn" type="button"
-                                data-cert-src="resource/cert-cse.jpg"
-                                data-cert-caption="Civil Service Examination — Professional · 2026">
-                                <i class="fas fa-image" aria-hidden="true"></i> View certificate
-                            </button>
                         </div>
 
                         <div class="cert-item cert-highlight">
-                            <div class="cert-name">Regional Science and Technology Week (RSTW) — Exhibitor</div>
-                            <div class="cert-date">2026 · Certificate of Appearance</div>
+                            <div class="cert-name">Regional Science, Technology, and Innovation Week (RSTW) — Exhibitor</div>
+                            <div class="cert-date">September 14–15, 2026 · Sulop Municipal Gymnasium</div>
                             <p class="cert-blurb">
-                                Exhibited the GGMS group of integrated municipal systems, including eSkolar+, at
-                                the Regional Science and Technology Week.
+                                Exhibited the eSulopGov group of integrated municipal systems at the 2026 RSTW in
+                                Davao del Sur, alongside other participating institutions.
                             </p>
-                            <a class="cert-view-btn"
-                                href="resource/CERTIFICATE%20OF%20APPEARANCE%20-%20JERICHO%20EARL%20MARTIN.pdf"
-                                target="_blank" rel="noopener noreferrer">
-                                <i class="fas fa-file-pdf" aria-hidden="true"></i> View certificate (PDF)
-                            </a>
+                            <button class="cert-view-btn" type="button"
+                                data-cert-src="resource/cert-rstw-appearance.jpg"
+                                data-cert-caption="Certificate of Appearance — 2026 Regional Science, Technology, and Innovation Week in Davao del Sur">
+                                <i class="fas fa-image" aria-hidden="true"></i> Certificate of Appearance
+                            </button>
+                            <button class="cert-view-btn" type="button"
+                                data-cert-src="resource/cert-rstw-attendance.jpg"
+                                data-cert-caption="Certificate of Attendance — 2026 Regional Science, Technology, and Innovation Week in Davao del Sur">
+                                <i class="fas fa-image" aria-hidden="true"></i> Certificate of Attendance
+                            </button>
                         </div>
 
                         <div class="cert-item cert-highlight">
@@ -449,8 +494,9 @@
                             <div class="cert-date">July 31, 2026 · Certificate of Appreciation</div>
                             <p class="cert-blurb">
                                 Invited to speak as a student resource speaker at the COIL Re-echo session
-                                "Fostering Limitless Learning in a Borderless World" at Davao del Sur State
-                                College, sharing my experience from the COIL program with Cambodia.
+                                &quot;Fostering Limitless Learning in a Borderless World&quot; at Davao del Sur State
+                                College, where open questions let me share my experience from the COIL program with
+                                Cambodia.
                             </p>
                             <button class="cert-view-btn" type="button"
                                 data-cert-src="resource/cert-re-echo.jpg"
@@ -471,18 +517,6 @@
                                 data-cert-caption="COIL International Collaboration · September–October 2025">
                                 <i class="fas fa-image" aria-hidden="true"></i> View certificate
                             </button>
-                        </div>
-
-                        <div class="cert-item">
-                            <div class="cert-row">
-                                <span class="cert-name">Regional Science and Technology Week (RSTW) — Attendee</span>
-                                <span class="cert-date">2026 · Certificate of Attendance</span>
-                            </div>
-                            <a class="cert-view-btn"
-                                href="resource/CERTIFICATE%20OF%20ATTENDANCE%20-%20JERICHO%20EARL%20MARTIN.pdf"
-                                target="_blank" rel="noopener noreferrer">
-                                <i class="fas fa-file-pdf" aria-hidden="true"></i> View certificate (PDF)
-                            </a>
                         </div>
 
                         <div class="cert-item">
@@ -541,12 +575,33 @@
                         <ul>
                             <li>Built and shipped AzaBuild end to end as the sole developer, now live in production
                                 at azabuild.cids.io</li>
-                            <li>Designed a Laravel 12 REST API with 150+ routes serving a React front end and mobile
-                                sync</li>
-                            <li>Implemented an interpolation engine over 1,700+ published material coefficients for
-                                cost estimation</li>
+                            <li>Designed a Laravel 12 REST API serving a React front end and an offline-capable
+                                Android app</li>
+                            <li>Implemented the quantity takeoff and cost estimation engine on Fajardo's
+                                <em>Simplified Construction Estimate</em>, with CPM-PERT scheduling and weather-aware
+                                delay tracking</li>
                             <li>Gathered requirements directly from the firm's engineers and iterated on their
                                 feedback</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="experience-title">Student Leader &amp; Developer, eSulopGov Program</div>
+                        <div class="experience-company">Municipality of Sulop · Davao del Sur</div>
+                        <div class="experience-date">Ongoing</div>
+                    </div>
+                    <div class="experience-description">
+                        <ul>
+                            <li>Led the student team behind the municipality's integrated eSulopGov systems,
+                                managing the other students' systems</li>
+                            <li>Spoke with municipal stakeholders to gather requirements and report progress</li>
+                            <li>Solo developer of eSkolar+ (Laravel, React, MySQL), integrated with the Civil Registry
+                                and GGMS and hosted on Hostinger</li>
+                            <li>Exhibited eSulopGov at the Regional Science, Technology, and Innovation Week
+                                (September 14–15, 2026, Sulop Municipal Gymnasium) alongside other participating
+                                institutions in Davao del Sur</li>
                         </ul>
                     </div>
                 </div>
@@ -561,8 +616,8 @@
                         <ul>
                             <li>Invited to speak at the college's COIL Re-echo session, held at the Mini Theatre in
                                 Digos City, after the Philippines × Cambodia program</li>
-                            <li>Shared my experience leading an international student team through COIL and building
-                                TravelLink ASEAN</li>
+                            <li>Took open questions that let me share my COIL experience: leading an international
+                                student team and building TravelLink ASEAN</li>
                             <li>Recognized with a Certificate of Appreciation from the College President</li>
                         </ul>
                     </div>
