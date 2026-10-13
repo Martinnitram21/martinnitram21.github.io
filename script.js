@@ -369,7 +369,7 @@
     function closeLightbox() {
       lightbox.classList.remove("open");
       document.body.style.overflow = "";
-      lightboxImg.src = "";
+      lightboxImg.removeAttribute("src");
       lightboxImg.alt = "";
       if (lastFocused) lastFocused.focus();
     }
