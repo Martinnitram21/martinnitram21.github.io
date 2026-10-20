@@ -331,7 +331,7 @@
       start(id);
     }
 
-    ["azabuild", "eskolar", "klaru", "travellink", "travelweave"].forEach(initCarousel);
+    ["azabuild", "eskolar", "klaru", "travellink"].forEach(initCarousel);
 
     document.querySelectorAll(".carousel-btn").forEach(function (btn) {
       btn.addEventListener("click", function () {
